@@ -1,10 +1,10 @@
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.linzhixin93'
+apply plugin: 'com.android.application'
+
 android {
     compileSdkVersion 28
 
     defaultConfig {
+        applicationId "com.baoyz.android_actionsheet"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -21,5 +21,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:1.0.2"
+    implementation project(':library')
 }
-
