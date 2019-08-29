@@ -23,6 +23,9 @@
  */
 package com.baoyz.actionsheet;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -33,9 +36,6 @@ import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -209,7 +209,7 @@ public class ActionSheet extends Fragment implements View.OnClickListener {
         params.gravity = Gravity.BOTTOM;
         mPanel.setLayoutParams(params);
         mPanel.setOrientation(LinearLayout.VERTICAL);
-        parent.setPadding(0, 0, 0, getNavBarHeight(getActivity()));
+        parent.setPadding(0, 0, 0, 0);
         parent.addView(mBg);
         parent.addView(mPanel);
         return parent;
@@ -272,7 +272,7 @@ public class ActionSheet extends Fragment implements View.OnClickListener {
             }
         }
         Button bt = new Button(getActivity());
-        bt.getPaint().setFakeBoldText(true);
+//        bt.getPaint().setFakeBoldText(true);
         bt.setTextSize(TypedValue.COMPLEX_UNIT_PX, mAttrs.actionSheetTextSize);
         bt.setId(ActionSheet.CANCEL_BUTTON_ID);
         bt.setBackgroundDrawable(mAttrs.cancelButtonBackground);
